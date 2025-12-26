@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage Menarik dengan CSS</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --secondary: #f59e42;
+      --background: #f5f6fa;
+      --dark: #1e293b;
+      --light: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--background);
+      color: var(--dark);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.4rem 2rem 0.8rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--light);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo-svg {
+      width: 38px;
+      height: 38px;
+      display: inline-block;
+    }
+    .navbar {
+      display: flex;
+      gap: 2rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .navbar a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .navbar a::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 0%;
+      height: 2px;
+      background: var(--secondary);
+      transition: width .3s;
+    }
+    .navbar a:hover::after {
+      width: 100%;
+    }
+    .navbar a:hover {
+      color: var(--secondary);
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 70%, var(--secondary) 100%);
+      padding: 0 0 5rem 0;
+      color: var(--light);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--background);
+      border-radius: 50% 50% 0 0;
+    }
+    .hero {
+      max-width: 540px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      margin-top: 1.7rem;
+    }
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      color: #e0e7ef;
+    }
+    .cta-btn {
+      background: var(--secondary);
+      color: var(--light);
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 16px 0 rgba(59, 130, 246, 0.12);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover {
+      background: #e28010;
+      transform: translateY(-2px) scale(1.03);
+    }
+    /* About Section */
+    .about-section {
+      background: #fff;
+      max-width: 900px;
+      margin: -3rem auto 2.5rem auto;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px rgba(30, 41, 59, 0.06);
+      padding: 2.5rem 2rem;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .about-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .about-desc {
+      font-size: 1.13rem;
+      color: #475569;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    /* Services Section */
+    .services-section {
+      max-width: 1100px;
+      margin: 0 auto 3rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      justify-content: center;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(30,41,59,0.09);
+      padding: 2rem 1.7rem;
+      flex: 1 1 260px;
+      max-width: 310px;
+      min-width: 220px;
+      text-align: center;
+      transition: transform 0.17s, box-shadow 0.17s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(245, 158, 66, 0.13);
+    }
+    .service-icon {
+      font-size: 2.3rem;
+      color: var(--secondary);
+      margin-bottom: 0.6rem;
+    }
+    .service-title {
+      font-size: 1.16rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .service-desc {
+      color: #64748b;
+      font-size: 1rem;
+    }
+    /* Features section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-card {
+      background: var(--light);
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(30,41,59,0.09);
+      padding: 2rem 1.5rem;
+      max-width: 320px;
+      flex: 1 1 280px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(59, 130, 246, 0.14);
+    }
+    .feature-icon {
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .feature-desc {
+      color: #555e6d;
+      font-size: 1rem;
+    }
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 1rem;
+      margin-top: 3rem;
+    }
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .services-section {
+        gap: 1.5rem;
+      }
+    }
+    @media (max-width: 900px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-card {
+        max-width: 90vw;
+      }
+      .header-top {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1rem 0.7rem 1rem;
+      }
+      .navbar {
+        gap: 1.2rem;
+      }
+      .services-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-section {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 0 0 4rem 0;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 0 1rem;
+      }
+      .feature-card {
+        padding: 1.5rem 1rem;
+      }
+      .header-top {
+        padding: 0.8rem 0.6rem 0.6rem 0.6rem;
+      }
+      .logo-brand {
+        font-size: 1rem;
+      }
+      .logo-svg {
+        width: 29px;
+        height: 29px;
+      }
+      .about-section {
+        padding: 1.5rem 0.7rem;
+      }
+      .service-card {
+        padding: 1.3rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <img
+        src="./public/LOGO.png"
+        alt="Logo"
+        style="height: 60px; width: 120px"
+      />
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#layanan">Layanan</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <h1 class="hero-title">Selamat Datang di Website Saya</h1>
+      <p class="hero-desc">Solusi digital terbaik, dan menyediakan layanan modern, inovatif, dan profesional sesuai perkembangan zaman.</p>
+      <button class="cta-btn">Mulai Sekarang</button>
+    </div>
+  </header>
+
+  <!-- SECTION TENTANG -->
+  <section class="about-section" id="tentang">
+    <div class="about-title">Tentang Saya</div>
+    <div class="about-desc">
+      Saya adalah Seorang Mahasiswa di Universitas Teknologi Bandung.
+    </div>
+  </section>
+
+  <!-- SECTION LAYANAN -->
+  <section class="services-section" id="layanan">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <div class="service-title">Pembuatan Website</div>
+      <div class="service-desc">
+        saya bisa membuat website profesional, responsif, dan mudah dikelola, sesuai kebutuhan anda.
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-title">Desain UI/UX</div>
+      <div class="service-desc">
+        Desain antarmuka yang modern, ramah pengguna, dan menarik untuk aplikasi maupun website .
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <div class="service-title">Optimasi Digital</div>
+      <div class="service-desc">
+        Layanan optimasi SEO, kecepatan website, hingga pemasaran digital agar makin berkembang.
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🚀</div>
+      <div class="feature-title">Desain Modern</div>
+      <div class="feature-desc">Tampilan elegan dan interaktif untuk meningkatkan kepercayaan dan pengalaman pengguna.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+      <div class="feature-title">Inovatif & Kreatif</div>
+      <div class="feature-desc">Ide-ide segar dan solusi kreatif untuk setiap kebutuhan digital Anda.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Cepat & Responsif</div>
+      <div class="feature-desc">Website responsif, cepat diakses di semua perangkat, dari desktop hingga smartphone.</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Website Menarik &mdash; Dibuat Oleh Bnagbang Ramadhan
+  </footer>
+</body>
+</html>
